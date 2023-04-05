@@ -15,9 +15,9 @@
 
 	<div class="step">
 		
-		<div class="step__content">
+		<div class="step__content step__content--edit">
 			<div class="step__title">
-				Edit levels
+				Suggested levels for a game about "GAME_TOPIC"
 			</div>
 
 			<div class="edit-levels__list">
@@ -28,19 +28,24 @@
 						Level 1 
 					</div>
 					<div class="edit-levels__icons">
-						<img src="img/edit.svg" alt="">
-						<img src="img/delete.svg" alt="">
+						<img src="img/edit-246.svg" alt="" class="edit-btn">
+						<img src="img/delete-84.svg" alt="" class="delete-btn">
 					</div>
 					
 				</div>
 
 				<div class="edit-text">
 					
-					<span>Question:</span> Lorem dolor sit amet?
+					<span>Question:</span>
+
+					<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
+					
+					
 				</div>
 
 				<div class="edit-text">
-					<span>Answer:</span> Lorem ipsum dolor sit.
+					<span>Answer:</span> 
+					<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
 				</div>
 
 				</div>
@@ -51,33 +56,56 @@
 											Level 2
 										</div>
 										<div class="edit-levels__icons">
-											<img src="img/edit.svg" alt="">
-											<img src="img/delete.svg" alt="">
+											<img src="img/edit-246.svg" alt="" class="edit-btn">
+											<img src="img/delete-84.svg" alt="" class="delete-btn">
 										</div>
 										
 									</div>
 					
 									<div class="edit-text">
 										
-										<span>Question:</span> Lorem ipsum dolor sit amet?
+										<span>Question:</span> 
+										<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
 									</div>
 					
 									<div class="edit-text">
-										<span>Answer:</span> Lorem ipsum dolor 
+										<span>Answer:</span> 
+										<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
 									</div>
 					
 									</div>
 				
 			</div>
 
+
+			<a href="spiner" class="step-button">
+				CREATE THE GAME
+			</a>
+
 			
 	</div>
 
 	
- <script
-  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  crossorigin="anonymous"></script>
+	<script
+	src="https://code.jquery.com/jquery-3.6.4.min.js"
+	integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	crossorigin="anonymous"></script>
+
+  <script>
+	$('.edit-btn').click(function(){
+		var inp = $('.input-editbl');
+		$(this).parent().parent().parent().find('.input-editbl').prop('readonly', false);
+		inp.prop("'readonly", !inp.prop("'readonly"));
+	})
+
+	$('.delete-btn').click(function(){
+		$(this).parent().parent().parent().fadeOut()
+	})
+
+
+
+	
+  </script>
 	<script src="js/main.js"></script>
 </body>
 </html>
