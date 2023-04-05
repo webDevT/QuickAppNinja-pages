@@ -48,6 +48,15 @@
 					<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
 				</div>
 
+				<div class="save-cancel">
+					<div class="save">
+						Save
+					</div>
+					<div class="cancel">
+						Cancel
+					</div>
+				</div>
+
 				</div>
 
 				<div class="edit-levels__item">
@@ -72,13 +81,21 @@
 										<span>Answer:</span> 
 										<input type="text" value="Lorem dolor sit amet?" readonly class="input-editbl">
 									</div>
-					
+					<div class="save-cancel">
+					<div class="save">
+						Save
+					</div>
+					<div class="cancel">
+						Cancel
+					</div>
+				</div>
 									</div>
+									
 				
 			</div>
 
 
-			<a href="spiner" class="step-button">
+			<a href="spiner.html" class="step-button">
 				CREATE THE GAME
 			</a>
 
@@ -96,11 +113,21 @@
 		var inp = $('.input-editbl');
 		$(this).parent().parent().parent().find('.input-editbl').prop('readonly', false);
 		inp.prop("'readonly", !inp.prop("'readonly"));
+		$(this).parent().parent().parent().find('.save-cancel').css('display', 'flex');
 	})
 
 	$('.delete-btn').click(function(){
 		$(this).parent().parent().parent().fadeOut()
 	})
+
+	$('.save, .cancel').click(function(){
+		var inp = $('.input-editbl');
+		$(this).parent().parent().find('.input-editbl').prop('readonly', true);
+		inp.prop("'readonly", !inp.prop("'readonly"));
+		$(this).parent().fadeOut()
+	})
+
+	
 
 
 
